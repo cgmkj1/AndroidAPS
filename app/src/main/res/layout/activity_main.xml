@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <import type="info.nightscout.utils.SP"/>
+        <import type="info.nightscout.utils.DataBinderUtils"/>
     </data>
 <LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +12,7 @@
     <FrameLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="@{SP.isCompactView()?@dimen/compactHeight : @dimen/abc_action_bar_default_height_material, default=wrap_content}"
+        android:layout_height="@{DataBinderUtils.isCompactView()?@dimen/compactHeight : @dimen/abc_action_bar_default_height_material, default=wrap_content}"
         android:clipChildren="false"
         android:clipToPadding="false">
 

@@ -146,22 +146,4 @@ public class SP {
         editor.remove(key);
         editor.apply();
     }
-
-    /*
-    * Some quick helpers e.g. for data binding
-    * TODO: refactor to other place related to the GUI
-    * */
-
-    static public boolean isCompactView(){
-        return SP.getBoolean("short_tabtitles", false);
-    }
-
-    @BindingAdapter("android:layout_height")
-    public static void setLayoutHeight(View view, float height) {
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        layoutParams.height = (int) height;
-        view.setLayoutParams(layoutParams);
-    }
-
-
 }

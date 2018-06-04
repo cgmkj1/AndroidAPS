@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 
 import info.nightscout.androidaps.interfaces.PluginBase;
+import info.nightscout.utils.SP;
 
 /**
  * Created by mike on 30.05.2016.
@@ -52,12 +53,12 @@ public class TabPageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if(preferences.getBoolean("short_tabtitles", false)){
-            return visibleFragmentList.get(position).getNameShort();
-        }
-        return visibleFragmentList.get(position).getName();
+        String padding = SP.getBoolean("compact_tabtitles", true)?"":"   ";
 
+        if(SP.getBoolean("short_tabtitles", false)){
+            return padding + visibleFragmentList.get(position).getNameShort() + padding;
+        }
+        return padding + visibleFragmentList.get(position).getName() + padding;
     }
 
     @Override
