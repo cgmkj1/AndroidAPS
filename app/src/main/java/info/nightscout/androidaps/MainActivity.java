@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.databinding.DataBindingUtil;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         Iconify.with(new FontAwesomeModule());
         LocaleHelper.onCreate(this, "en");
 
-        setContentView(R.layout.activity_main);
+        DataBindingUtil.setContentView(this, R.layout.activity_main);
         setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

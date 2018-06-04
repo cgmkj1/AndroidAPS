@@ -66,7 +66,7 @@ public class PreferencesActivity extends PreferenceActivity implements SharedPre
             finish();
         }
         if (key.equals("short_tabtitles")) {
-            MainApp.bus().post(new EventRefreshGui());
+            MainApp.bus().post(new EventRefreshGui(true));
         }
         if (key.equals(MainApp.gs(R.string.key_openapsama_useautosens)) && SP.getBoolean(R.string.key_openapsama_useautosens, false)) {
             OKDialog.show(this, MainApp.gs(R.string.configbuilder_sensitivity), MainApp.gs(R.string.sensitivity_warning), null);

@@ -63,7 +63,7 @@ android {
         targetSdkVersion 25
         multiDexEnabled true
         versionCode 1500
-        version "1.60e-dev"
+        version "1.60e-adrian-navdrawer"
         buildConfigField "String", "VERSION", '"' + version + '"'
         buildConfigField "String", "BUILDVERSION", generateGitBuild()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -71,6 +71,11 @@ android {
         ndk {
             moduleName "BleCommandUtil"
         }
+
+        dataBinding {
+            enabled = true
+        }
+
     }
     lintOptions {
         // TODO remove once wear dependency com.google.android.gms:play-services-wearable:7.3.0
